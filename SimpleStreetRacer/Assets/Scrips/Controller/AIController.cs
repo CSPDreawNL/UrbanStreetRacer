@@ -18,31 +18,35 @@ namespace USR.Controller
 
             transform.Translate(Vector3.forward * Time.deltaTime * m_Speed);
 
-            if (m_ForwardInput == 1)
+            if (!m_Finished)
+            {
+                if (m_ForwardInput == 1)
+                {
+                    if (m_Speed <= 0)
+                    {
+                        m_Speed = m_Speed + Time.deltaTime * m_SpeedModifier;
+                    }
+                    m_Speed = m_Speed + Time.deltaTime * m_SpeedModifier;
+                }
+                else if (m_ForwardInput == -1)
+                {
+                    if (m_Speed >= 0)
+                    {
+                        m_Speed = m_Speed - Time.deltaTime * m_SpeedModifier;
+                    }
+                    m_Speed = m_Speed - Time.deltaTime * m_SpeedModifier;
+                }
+            }
+
+            if (m_Finished)
             {
                 if (m_Speed <= 0)
                 {
-                    m_Speed = m_Speed + Time.deltaTime * m_SpeedModifier;
-                }
-                m_Speed = m_Speed + Time.deltaTime * m_SpeedModifier;
-            }
-            else if (m_ForwardInput == -1)
-            {
-                if (m_Speed >= 0)
-                {
-                    m_Speed = m_Speed - Time.deltaTime * m_SpeedModifier;
-                }
-                m_Speed = m_Speed - Time.deltaTime * m_SpeedModifier;
-            }
-            else if (m_Finished)
-            {
-                if (m_Speed <= 0)
-                {
-                    m_Speed = m_Speed + Time.deltaTime * m_SpeedModifier;
+                    m_Speed = m_Speed + Time.deltaTime * m_SpeedModifier * 3;
                 }
                 if (m_Speed >= 0)
                 {
-                    m_Speed = m_Speed - Time.deltaTime * m_SpeedModifier;
+                    m_Speed = m_Speed - Time.deltaTime * m_SpeedModifier * 3;
                 }
                 if (m_Speed <= 0.5f && m_Speed >= -0.5f)
                 {

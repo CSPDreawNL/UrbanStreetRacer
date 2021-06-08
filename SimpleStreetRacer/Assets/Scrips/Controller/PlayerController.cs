@@ -31,7 +31,7 @@ namespace USR.Controller
             {
                 if (m_Speed <= 0)
                 {
-                    m_Speed = m_Speed + Time.deltaTime * m_SpeedModifier;
+                    m_Speed = m_Speed + Time.deltaTime * m_SpeedModifier * 2;
                 }
                 m_Speed = m_Speed + Time.deltaTime * m_SpeedModifier;
             }
@@ -39,7 +39,7 @@ namespace USR.Controller
             {
                 if (m_Speed >= 0)
                 {
-                    m_Speed = m_Speed - Time.deltaTime * m_SpeedModifier;
+                    m_Speed = m_Speed - Time.deltaTime * m_SpeedModifier * 2;
                 }
                 m_Speed = m_Speed - Time.deltaTime * m_SpeedModifier;
             }
@@ -56,6 +56,18 @@ namespace USR.Controller
                 if (m_Speed <= 0.5f && m_Speed >= -0.5f)
                 {
                     m_Speed = 0;
+                }
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (m_Speed <= 0)
+                {
+                    m_Speed = m_Speed + Time.deltaTime * m_SpeedModifier * 3;
+                }
+                if (m_Speed >= 0)
+                {
+                    m_Speed = m_Speed - Time.deltaTime * m_SpeedModifier * 3;
                 }
             }
 
