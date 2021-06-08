@@ -18,14 +18,14 @@ namespace USR.Core
             {
                 PlayerController playercontroller = other.GetComponent<PlayerController>();
                 playercontroller.m_Finished = true;
-                Debug.Log(other.name + "has finished " + m_FinishedText);
+                Debug.Log(other.name + " has finished " + m_FinishedText);
                 ContinueFinish();
             }
             if (other.tag == "AI")
             {
                 AIController aiController = other.GetComponent<AIController>();
                 aiController.m_Finished = true;
-                Debug.Log(other.name + "has finished " + m_FinishedText);
+                Debug.Log(other.name + " has finished " + m_FinishedText);
                 ContinueFinish();
             }
         }
