@@ -32,17 +32,21 @@ namespace USR.Core
 
         private void ContinueFinish()
         {
-            if (m_FirstPlace == true)
+            if (m_FirstPlace)
             {
                 m_SecondPlace = true;
                 m_FirstPlace = false;
                 m_FinishedText = "Second";
             }
-            else if (m_SecondPlace == true)
+            else if (m_SecondPlace)
             {
                 m_ThirdPlace = true;
                 m_SecondPlace = false;
                 m_FinishedText = "Third";
+            }
+            else if (m_ThirdPlace)
+            {
+                return;
             }
         }
     }

@@ -12,13 +12,6 @@ namespace USR.Controller
         private float m_ForwardInput;
         public bool m_Finished = false;
 
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
         // Update is called once per frame
         void Update()
         {
