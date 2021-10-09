@@ -12,7 +12,6 @@ namespace USR.Controller
         private float m_ForwardInput;
         public bool m_Finished = false;
 
-        // Update is called once per frame
         void Update()
         {
             m_HorizontalInput = Input.GetAxis("Horizontal");
