@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using PathCreation;
+//using PathCreation;
 
 namespace USR.Controller
 {
@@ -13,8 +13,8 @@ namespace USR.Controller
         public bool m_Finished = false;
         int m_ForwardInput;
 
-        public PathCreator pathCreator;
-        public EndOfPathInstruction end;
+        //public PathCreator pathCreator;
+        //public EndOfPathInstruction end;
         float distanceTravelled;
 
         private void Update()
@@ -39,12 +39,12 @@ namespace USR.Controller
                     }
                     m_Speed = m_Speed - Time.deltaTime * m_SpeedModifier;
                 }
-                if (pathCreator != null)
-                {
-                    distanceTravelled += m_Speed * Time.deltaTime;
-                    transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, end);
-                    transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, end);
-                }
+                //if (pathCreator != null)
+                //{
+                //    distanceTravelled += m_Speed * Time.deltaTime;
+                //    transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, end);
+                //    transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, end);
+                //}
             }
 
             if (m_Finished)
